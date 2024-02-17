@@ -1,0 +1,124 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tasker</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:linear-gradient(145deg, #a1c4fd, #c2e9fb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 300px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-group {
+            text-align: center;
+        }
+
+        .login-btn, .signup-btn {
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .signup-btn {
+            background-color: transparent;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+
+        .signup-btn:hover {
+            color: #555;
+        }
+
+        /* Add some hover effects and transitions for interactive elements */
+        input[type="text"]:hover, input[type="password"]:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            background-color: #fff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="login-container">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="action-group">
+            <button type="submit" class="login-btn">Login</button>
+            <a href="{% url 'add_user' %}" class="signup-btn">Sign Up</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Task</title>
+    <link rel="stylesheet" href="{% static 'assign_task.css' %}">
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'add_team' %}">Add Team</a>
+        <a href="{% url 'assign_task' %}">Assign Task</a>
+        <a href="{% url 'logout' %}">Logout ({{ user.username }})</a>
+    </nav>
+<div>
+    <form method="post" class="container">
+        {% csrf_token %}
+        <h2>Assign Task</h2>
+        <div class="form-group">
+            <label for="id_assigned_team">Assigned Team:</label>
+            {{ form.assigned_team }}
+        </div>
+        <div class="form-group">
+            <label for="id_task_name">Task Name:</label>
+            {{ form.task_name }}
+        </div>
+        <div class="form-group">
+            <label for="id_priority">Priority:</label>
+            {{ form.priority }}
+        </div>
+        <div class="form-group">
+            <label for="id_description">Description:</label>
+            {{ form.description }}
+        </div>
+        <button type="submit" class="btn btn-primary">Assign Task</button>
+    </form>
+</div>
+</body>
+</html>

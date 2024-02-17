@@ -1,0 +1,31 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Team - Tasker</title>
+    <link rel="stylesheet" href="{% static 'add_team.css' %}">
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'add_team' %}">Add Team</a>
+        <a href="{% url 'assign_task' %}">Assign Task</a>
+        <a href="{% url 'logout' %}">Logout ({{ user.username }})</a>
+    </nav>
+
+    <div class="container">
+        <h2>Add Team</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Team</button>
+        </form>
+    </div>
+</body>
+
+</html>

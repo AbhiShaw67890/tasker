@@ -1,0 +1,84 @@
+/* Base settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f2f5;
+    height: 100%;
+}
+
+
+
+
+/* Main container */
+.container {
+    margin-top: 60px; /* Adjust based on the height of your nav */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 60px auto; /* Adjust margin to not overlap the nav */
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Task List */
+.list-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.list-unstyled li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-sm {
+    font-size: 0.875rem;
+}
+
+/* FontAwesome Icons */
+.fa-trash, .fa-pen-to-square {
+    margin: 0 5px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
